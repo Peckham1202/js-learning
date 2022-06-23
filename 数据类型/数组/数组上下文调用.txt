@@ -1,0 +1,17 @@
+在数组上下文调用
+重要程度: 5
+结果是什么？为什么？
+
+let arr = ["a", "b"];
+
+arr.push(function() {
+  alert( this );
+});
+
+arr[2](); // ?
+
+答： 在nodejs中运行，结果是 a,b,function () {
+  console.log(this.toString());
+}
+
+因为数组中有 3 项，前两项是原数组自带的字符串，后一项为添加进来的函数
