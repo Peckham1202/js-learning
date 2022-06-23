@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function readNumber() {
+        let num;
+        do {
+          num = prompt("??", 0);
+        } while (!isFinite(num));
+
+        if (num === null || num === "") {
+          return null;
+        }
+        return +num;
+      }
+
+      alert(`read: ${readNumber()}`);
+    </script>
+  </body>
+</html>
